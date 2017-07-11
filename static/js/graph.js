@@ -3,6 +3,12 @@ queue()
     .defer(d3.json, "/f1db")
     .await(makeGraphs);
 
+function getDriver(name) {
+
+    var iframe = document.getElementById("driverWiki")
+    iframe.src="https://en.wikipedia.org/wiki/" + name.replace(" ", "_")
+}
+
 function makeGraphs(error, data) {
 
     data.forEach(function(d) {
@@ -57,6 +63,10 @@ function makeGraphs(error, data) {
 
 
 
+    //var countPosition = positionDim.group().
+
+
+
     //var minDate = yearDim.bottom(1)[1]["date_posted"];
     //var maxDate = yearDim.top(1)[1]["date_posted"];
 
@@ -75,8 +85,8 @@ function makeGraphs(error, data) {
      //    .radius(190)
      //    .innerRadius(40)
      //    .transitionDuration(1500)
-     //    .dimension(yearDim)
-     //    .group(countYear);
+     //    .dimension(driverDim)
+     //    .group(countPosition);
 
     // chart2
     //     .ordinalColors(["#79CED7", "#66AFB2", "#C96A23", "#D3D1C5", "#F5821F", "#C96A23"])
@@ -90,8 +100,8 @@ function makeGraphs(error, data) {
     rowChart
         .ordering(function(d) { return -d.value })
         .ordinalColors(["#79CED7", "#66AFB2", "#C96A23", "#D3D1C5", "#F5821F"])
-        .width(800)
-        .height(700)
+        .width(600)
+        .height(600)
         .dimension(nameDim)
         .group(sumPoints)
         .cap(20)
@@ -101,29 +111,32 @@ function makeGraphs(error, data) {
     lapsChart
         .ordering(function(d) { return -d.value })
         .ordinalColors(["#79CED7", "#66AFB2", "#C96A23", "#D3D1C5", "#F5821F"])
-        .width(800)
-        .height(700)
+        .width(600)
+        .height(600)
         .dimension(nameDim)
         .group(sumLaps)
         .cap(20)
         .othersGrouper(false)
+        .on("renderlet", function(chart){
+
+        })
         .xAxis().ticks(12);
 
     lineChart
         .renderArea(true)
         .xyTipsOn('always')
         .ordinalColors(["#C96A23"])
-        .width(800)
-        .height(700)
+        .width(900)
+        .height(350)
         //.brushOn(false)
         .margins({top: 30, right: 50, bottom: 30, left: 50})
         .dimension(yearDim)
         .group(sumLapsPerYear)
         .transitionDuration(500)
-        .x(d3.time.scale().domain([new Date(1975, 0, 1), new Date(2017, 0, 1)]))
+        .x(d3.time.scale().domain([new Date(1950, 0, 1), new Date(2017, 0, 1)]))
         //.elasticY(true)
         .xAxisLabel("Year")
-        .y(d3.scale.linear().domain([20000, 51000]))
+        .y(d3.scale.linear().domain([20000, 80000]))
         .yAxis().ticks(6);
 
     // var data = [{
