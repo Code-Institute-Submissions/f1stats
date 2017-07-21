@@ -15,7 +15,14 @@ COLLECTION_NAME = 'f1results'
 @app.route('/')
 def index():
     return render_template("index.html")
-# ROUTE OF DB FILE?
+
+@app.route("/drivers")
+def drivers():
+    return render_template("drivers.html")
+
+@app.route("/circuits")
+def circuits():
+    return render_template("circuits.html")
 
 
 @app.route("/f1db")

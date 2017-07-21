@@ -118,7 +118,13 @@ function makeGraphs(error, data) {
         .cap(20)
         .othersGrouper(false)
         .on("renderlet", function(chart){
-
+            var drivers = chart.selectAll('rect')[0];
+            for(driver of drivers) {
+                var driverName = driver.parentNode.getElementsByTagName('text')[0].innerHTML;
+                driver.onmouseover = function(){
+                    getDriver(driverName);
+                };
+            };
         })
         .xAxis().ticks(12);
 
@@ -138,13 +144,6 @@ function makeGraphs(error, data) {
         .xAxisLabel("Year")
         .y(d3.scale.linear().domain([20000, 80000]))
         .yAxis().ticks(6);
-
-    // var data = [{
-    //     x: ['Mercedes', 'Ferrari', 'Red Bull', 'Force India', 'Toro Rosso', 'Williams', 'Renault', 'HAAS', 'Sauber', 'McLaren'],
-    //     y: [222, 214, 112, 71, 29, 22, 18, 15, 4, 0],
-    //     type: 'bar'
-    // }];
-    // Plotly.newPlot('barchart', data);
 
 
     dc.renderAll();

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Formula 1 Stats</title>
+    <title>F1 Circuits</title>
     <link rel="stylesheet" href="{{ url_for ('static',filename='lib/css//bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url_for ('static',filename='lib/css/keen-dashboards.css') }}">
     <link rel="stylesheet" href="{{ url_for ('static',filename='lib/css/dc.css') }}">
@@ -16,52 +16,31 @@
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="./">F1 Stats Dashboard</a>
-            <!--<a class="navbar-brand" autofocus href="#" onclick="javascript:introJs().start();">
-                Start Tour!
-            </a>-->
             <a class="navbar-brand" href="./drivers">Driver Info</a>
             <a class="navbar-brand" href="./circuits">Circuit Info</a>
         </div>
     </div>
 </div>
 
-<div id="outer" class="container-fluid">
-
-
+<div class="container">
     <div class="row">
 
-        <div class="col-sm-6">
-
-            <div id="rowChart">
-
-            </div>
+        <div class="col-sm-2">
+            <h1>Choose a Circuit</h1>
         </div>
 
-        <div class="col-sm-6">
+        <div class="col-sm-10">
 
-            <div id="lapsChart">
+            <iframe id="driverWiki" src="https://en.wikipedia.org/wiki/Main_Page"  width="500" height="500">
 
-            </div>
+            </iframe>
+
         </div>
-     </div>
 
-    <div class="row">
 
-        <div class="col-sm-12">
 
-            <div id="lineChart">
-
-            </div>
-        </div>
     </div>
-
 </div>
-
-<iframe id="driverWiki" src="https://en.wikipedia.org/wiki/Main_Page"  width="500" height="500"></iframe>
-
-
-
-
 
 <script src="{{ url_for ('static',filename='lib/js/jquery.min.js') }}"></script>
 <script src="{{ url_for ('static',filename='lib/js/bootstrap.min.js') }}"></script>
