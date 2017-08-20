@@ -1,0 +1,75 @@
+#rowChart {
+    font-size: 16px;
+    font-family: "Lucinda Grande", "Lucinda Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+}
+
+.dc-select-menu {
+    background: lightblue;
+    height: 39px;
+    font-family: Verdana;
+}
+
+.dc-chart g.row text {
+    font-size: 14px;
+    fill: black;
+    font-family: Verdana;
+}
+
+#outer {
+    background-image: url("f1background2.png");
+}
+
+.navbar {
+    background-image: url("banner.png");
+    height: 50px;
+}
+
+.navbar-brand {
+    font-size: 20px;
+    font-family: Verdana;
+    font-weight: bold;
+    text-shadow: 3px 2px black;
+}
+
+.navbar-nav {
+    font-size: 18px;
+    font-family: Verdana;
+    font-weight: bold;
+    text-shadow: 3px 2px black;
+    display: flex;
+}
+
+.navbar-inverse .navbar-nav>.active>a:hover {
+    font-size: 18px;
+    font-family: Verdana;
+    background-color: #8b0229;
+    color: lightgrey;
+    font-style: italic;
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-inverse .navbar-nav>.active>a:focus {
+    color: white;
+    background-color: darkred;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: lightgray;
+    background-color: darkred;
+    font-style: italic;
+}
+
+
+
+
+h2 {
+    font-size: 22px;
+    font-family: Verdana;
+    margin-left: 30px;
+    font-weight: bold;
+}
+
+#mainTextBox {
+    font-family: Verdana;
+    margin-left: 20px;
+    font-size: 14px;
+}

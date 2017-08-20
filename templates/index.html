@@ -15,29 +15,41 @@
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="./">F1 Stats Dashboard</a>
-            <!--<a class="navbar-brand" autofocus href="#" onclick="javascript:introJs().start();">
-                Start Tour!
-            </a>-->
-            <a class="navbar-brand" href="./drivers">Driver Info</a>
-            <a class="navbar-brand" href="./circuits">Circuit Info</a>
+            <a class="navbar-brand" type="button" href="./">Formula 1 Stats Dashboard</a>
         </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="./">Home</a></li>
+                <li><a href="./drivers">Drivers</a></li>
+                <li><a href="./circuits">Circuits</a></li>
+            </ul>
     </div>
 </div>
 
 <div id="outer" class="container-fluid">
 
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <p id="mainTextBox">This page shows a variety of Formula 1 Drivers' statistics which are all interactive through the power of D3.js
+            The chart on the left shows a timeline of Formula 1 results based on total laps driven by all Drivers participating in that year,
+            from 1950, all the way to the end of the 2016 season.
+            You may select a portion of the timeline to see who had the most points, or laps driven as displayed by the charts above, to see who was the
+            best at each statistic for your selected time period.</p>
+        </div>
+    </div>
 
     <div class="row">
 
-        <div class="col-sm-6">
+        <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6">
+            <h2>Total Points Aquired</h2>
 
             <div id="rowChart">
 
             </div>
         </div>
 
-        <div class="col-sm-6">
+        <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6">
+            <h2>Total Laps Completed</h2>
+
 
             <div id="lapsChart">
 
@@ -47,17 +59,18 @@
 
     <div class="row">
 
-        <div class="col-sm-12">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
             <div id="lineChart">
 
             </div>
         </div>
+
     </div>
 
 </div>
 
-<iframe id="driverWiki" src="https://en.wikipedia.org/wiki/Main_Page"  width="500" height="500"></iframe>
+<!--<iframe id="driverWiki" src="https://en.wikipedia.org/wiki/Main_Page"  width="500" height="500"></iframe>-->
 
 
 

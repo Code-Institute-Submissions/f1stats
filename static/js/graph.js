@@ -78,6 +78,11 @@ function makeGraphs(error, data) {
     var rowChart = dc.rowChart('#rowChart')
     var lapsChart = dc.rowChart('#lapsChart')
 
+    var selectDriver = dc.selectMenu('#driverSelect')
+
+
+    var selectCircuit = dc.selectMenu
+
 
      // chart1
      //    .ordinalColors(["#79CED7", "#66AFB2", "#C96A23", "#D3D1C5", "#F5821F"])
@@ -99,7 +104,10 @@ function makeGraphs(error, data) {
 
     rowChart
         .ordering(function(d) { return -d.value })
-        .ordinalColors(["#79CED7", "#66AFB2", "#C96A23", "#D3D1C5", "#F5821F"])
+      //  .ordinalColors(["#79CED7", "#66AFB2", "#C96A23", "#D3D1C5", "#F5821F"])
+        .linearColors(['red', 'orange'])
+            .colorDomain([10, 14000])
+            .colorAccessor(function (d, i) {console.log(d);  return d.value; })
         .width(600)
         .height(600)
         .dimension(nameDim)
@@ -110,7 +118,9 @@ function makeGraphs(error, data) {
 
     lapsChart
         .ordering(function(d) { return -d.value })
-        .ordinalColors(["#79CED7", "#66AFB2", "#C96A23", "#D3D1C5", "#F5821F"])
+        .linearColors(['red', 'orange'])
+            .colorDomain([10, 100000])
+            .colorAccessor(function (d, i) {console.log(d);  return d.value; })
         .width(600)
         .height(600)
         .dimension(nameDim)
@@ -119,21 +129,21 @@ function makeGraphs(error, data) {
         .othersGrouper(false)
         .on("renderlet", function(chart){
             var drivers = chart.selectAll('rect')[0];
-            for(driver of drivers) {
+            drivers.forEach(function(driver) {
                 var driverName = driver.parentNode.getElementsByTagName('text')[0].innerHTML;
                 driver.onmouseover = function(){
                     getDriver(driverName);
                 };
-            };
+            });
         })
         .xAxis().ticks(12);
 
     lineChart
         .renderArea(true)
         .xyTipsOn('always')
-        .ordinalColors(["#C96A23"])
+        .ordinalColors(['orange'])
         .width(900)
-        .height(350)
+        .height(400)
         //.brushOn(false)
         .margins({top: 30, right: 50, bottom: 30, left: 50})
         .dimension(yearDim)
@@ -142,9 +152,10 @@ function makeGraphs(error, data) {
         .x(d3.time.scale().domain([new Date(1950, 0, 1), new Date(2017, 0, 1)]))
         //.elasticY(true)
         .xAxisLabel("Year")
-        .y(d3.scale.linear().domain([20000, 80000]))
-        .yAxis().ticks(6);
+        .y(d3.scale.linear().domain([40000, 230000]))
+        .yAxis().ticks(10);
 
 
     dc.renderAll();
 }
+
