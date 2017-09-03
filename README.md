@@ -16,6 +16,7 @@ Change directory to the location of the f1final.csv file and in a new command li
 You should now be live with the import of data, and the second command line box should display:
 
 `-TIMESTAMP- connected to: localhost
+
 -TIMESTAMP- imported 23514 documents`
 
 ## Built With
