@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ url_for ('static',filename='lib/css/keen-dashboards.css') }}">
     <link rel="stylesheet" href="{{ url_for ('static',filename='lib/css/dc.css') }}">
     <link rel="stylesheet" href="{{ url_for ('static',filename='css/custom.css') }}">
+    <link rel="stylesheet" href="{{url_for ('static', filename='lib/css/introjs.css')}}" />
 </head>
 
 
@@ -21,28 +22,29 @@
                 <li><a href="./">Home</a></li>
                 <li><a href="./drivers">Drivers</a></li>
                 <li class="active"><a href="./circuits">Circuits</a></li>
+                <button class="intro_button" type="button" autofocus onclick="javascript:introJs().start();">Start Tour!</button>
             </ul>
     </div>
 </div>
 
-<div id="outer" class="container">
+<div id="outer" class="container-fluid">
     <div class="row">
 
-        <div class="col-sm-2">
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
             <h1>Choose a Circuit</h1>
+            <p>Select a circuit from the history of the Formula 1 Calendar to learn more about the track locations, prestige
+            and history. The Wikipedia link to your right is listed with many track details and also history of previous race
+            winners and events within Formula 1 and more hosted at that particular circuit.</p>
+            <div id="circuitSelect" data-step="1" data-intro="You can choose a Grand Prix from the history of Formula 1,
+            stretching back to 1950, and have information about the location and history of the racetrack load in the
+            Wikipedia iframe on the right" style="font-weight: normal" data-position="right"> </div>
         </div>
 
-        <div id="circuitSelect"> </div>
-
-        <div class="col-sm-10">
-
-            <iframe id="driverWiki" src="https://en.wikipedia.org/wiki/Formula_One"  width="900" height="700">
-
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8" data-step="2" data-intro="Once you have selected a Grand Prix
+        from the list, the Wikipedia will change to show information regarding your chosen circuit." style="font-weight: normal" data-position="right">
+            <iframe id="driverWiki" src="https://en.wikipedia.org/wiki/Formula_One"  width="1000" height="1000">
             </iframe>
-
         </div>
-
-
 
     </div>
 </div>

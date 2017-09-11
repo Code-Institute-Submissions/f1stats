@@ -7,9 +7,7 @@
     <link rel="stylesheet" href="{{ url_for ('static',filename='lib/css/keen-dashboards.css') }}">
     <link rel="stylesheet" href="{{ url_for ('static',filename='lib/css/dc.css') }}">
     <link rel="stylesheet" href="{{ url_for ('static',filename='css/custom.css') }}">
-</head>
-
-
+    <link rel="stylesheet" href="{{url_for ('static', filename='lib/css/introjs.css')}}" />
 </head>
 
 
@@ -24,23 +22,29 @@
                 <li><a href="./">Home</a></li>
                 <li class="active"><a href="./drivers">Drivers</a></li>
                 <li><a href="./circuits">Circuits</a></li>
+                <button class="intro_button" type="button" autofocus onclick="javascript:introJs().start();">Start Tour!</button>
             </ul>
     </div>
 </div>
 
 
-<div id="outer" class="container">
+<div id="outer" class="container-fluid">
     <div class="row">
 
-        <div class="col-sm-4">
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
             <h1>Choose a Driver</h1>
-            <div id="driverSelect"></div>
+            <p>Select a driver to learn more about the driver's statistics and history through his/her very own Wikipedia page
+            linked to the right and also a Pie Chart detailing all of the drivers' finishing positions throughout their Formula 1 Career</p>
+            <div id="driverSelect" data-step="1" data-intro="Choose a driver from the drop down selection box and the
+            below pie chart and Wikipedia driver information section will change to match the chosen driver" style="font-weight: normal" data-position="right"></div>
+            <div id="driverPositions" data-step="2" data-intro="Once a driver has been chosen the pie chart will show
+            how many times the driver has finished in each position in total." style="font-weight: normal" data-position="right"></div>
         </div>
-            <div id="driverPositions"></div>
 
-        <div class="col-sm-6">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8" data-step="3" data-intro="The Wikipedia iframe here will
+        change to show the profile of the selected driver" style="font-weight: normal" data-position="right">
 
-            <iframe id="driverWiki" src="https://en.wikipedia.org/wiki/Formula_One"  width="900" height="700">
+            <iframe id="driverWiki" src="https://en.wikipedia.org/wiki/Formula_One"  width="900" height="1000">
 
             </iframe>
 

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ url_for ('static',filename='lib/css/keen-dashboards.css') }}">
     <link rel="stylesheet" href="{{ url_for ('static',filename='lib/css/dc.css') }}">
     <link rel="stylesheet" href="{{ url_for ('static',filename='css/custom.css') }}">
+    <link rel="stylesheet" href="{{url_for ('static', filename='lib/css/introjs.css')}}" />
 </head>
 
 
@@ -21,6 +22,7 @@
                 <li class="active"><a href="./">Home</a></li>
                 <li><a href="./drivers">Drivers</a></li>
                 <li><a href="./circuits">Circuits</a></li>
+                <button class="intro_button" type="button" autofocus onclick="javascript:introJs().start();">Start Tour!</button>
             </ul>
     </div>
 </div>
@@ -39,15 +41,19 @@
 
     <div class="row">
 
-        <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6">
-            <h2>Total Points Aquired</h2>
+        <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6" data-step="1" data-intro="This bar chart tracks the total points
+            accumulated for drivers of all time. Select a time period on the line chart below to see the data change to
+            represent the chosen time period." style="font-weight: normal" data-position="right">
+            <h2>Total Points Acquired</h2>
 
             <div id="rowChart">
 
             </div>
         </div>
 
-        <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6">
+        <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6" data-step="2" data-intro="This bar chart tracks the total laps
+            accumulated for drivers of all time. Select a time period on the line chart below to see the data change to
+            represent the chosen time period." style="font-weight: normal" data-position="right">
             <h2>Total Laps Completed</h2>
 
 
@@ -59,7 +65,10 @@
 
     <div class="row">
 
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" data-step="3" data-intro="This line chart spans in time from
+        1950 when Formula 1 began, to the current finished season in 2016. Choose a custom length in years by dragging
+        from one point to another in the line graph, and the above two bar chart's data will recalculate to show data
+        from the new current time field." style="font-weight: normal" data-position="right">
 
             <div id="lineChart">
 

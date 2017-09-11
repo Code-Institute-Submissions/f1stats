@@ -4,7 +4,7 @@
 }
 
 .dc-select-menu {
-    background: lightblue;
+    background: orange;
     height: 39px;
     font-family: Verdana;
 }
@@ -58,7 +58,9 @@
     font-style: italic;
 }
 
-
+.dc-chart .pie-slice.pie-label {
+    fill:red;
+}
 
 
 h2 {
