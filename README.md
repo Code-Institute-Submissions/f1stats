@@ -50,6 +50,29 @@ Which took 'Michael' and 'Schumacher' and included a '_' between the two array's
 
 `https://en.wikipedia.org/wiki/Michael_Schumacher`
 
+#### dc.pieChart Unresolved Issues
+There remains one bug with the current Drivers Pie Chart which has not been solved due to time and complexity. the `.drawPaths` and `externalLabels` options were used to try and have the individual numerical data for the multitude of positions shown in the data for each driver appear easier on the eye, due to the small slices of the pie chart.
+
+Once a driver has been chosen, the pie chart looks as thus;
+- get a pic in here - 
+
+However, the desired result looks something like this, and only achieved once I have clicked each segment of the pie chart;
+- pic again -
+
+#### Circuits Page dc.selectMenu
+The dc.selectMenu function on the Circuit page is almost identical to the selection box on the Driver's page, and is also linked to a wikipedia iframe once the user has selected a grand prix from the history located in the data.
+There was a change in how the coding was written, as the original renderlet function wasn't working as intended. Well, the renderlet block of code looks the same, but what we do with the `selectedIndex` once chosen differs.
+
+We had to use `name.split(" ").slice(1).join("_");` to take the user's chosen Grand Prix, for example, the '1995 British Grand Prix', and chop off the 1995 part, ensuring that only 'British Grand Prix' was selected, then each array was seperated now by an underscore, appearing as thus:- `British_Grand_Prix`
+Feed that into the wikipedia iframe target, and the iframe would change to the correct url to display information about the chosen British Grand Prix, like so; `https://en.wikipedia.org/wiki/British_Grand_Prix`
+
+#### Coding Testing Used
+During my time writing and towards the end of my build, a variety of sites were used to check over my work, look for mistakes with coding and potential missed characters, such as;
+* jshint.com
+* https://validator.w3.org/
+* https://jigsaw.w3.org/css-validator/
+
+Mostly highlighted from this exercise was the proper closedown of some lines that had the missing charachter, `;`
 
 
 ## Built With
