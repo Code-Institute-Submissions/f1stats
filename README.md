@@ -28,7 +28,29 @@ The dashboard was built from a navbar template explored previously, and I added 
 #### Ensuring Data from MongoDB Live
 To test that the web app was recieved the f1final.csv data from MondoDB, please use the url https://example.com/f1db - This will display the raw data being imported in. Without this, the graphs will fail.
 
-#### Start more stuff from here
+#### dc.rowChart & dc.lineChart
+The initial graphs you see on the home page were created with basic parameters, and then edited to suit the data in a more visually appealing environment. Once the correct dimensions and groups were figured out with named variables utilising ndx.dimension, the graphs were further improved with the use of;
+* .linealColors - To colour the graphs with the same theme, with custom values in each chart so the flow from red to orange was consistant
+* .cap(20) in place for both row charts, as each chart is set to display the top 20 drivers in any given time period. The results in 'alltime' is huge and would not be easy on the eye.
+
+#### Drivers Page dc.selectMenu & dc.pieChart
+On the Drivers Page of the web app, you will see two different dc.js functions, one is a simple driver selection box and the second, a pie chart which is reactive to the choice selected from the aformentioned box. These also react with a Wikipedia iframe displayed on the page. 
+A lot of testing and trial and error went into these functions to get the end result which is displayed currently.
+* renderlet is a function used once a driver has been selected from the dc.selectMenu. It selects an array based on the output choice to then gather statistics regarding the name of the chosen driver. The selected index is then taken and fed into the pie chart so the personal finishing positions of the selected driver can be displayed.
+* Another use of the selected index grabbed by on.renderlet is to change the url of the wikipedia iframe to that of the personal driver's page on wikipedia, so the user can see information on their chosen driver.
+* This was difficult to achieve at first, but with guidance I used a name.replace function to remove the final portion of the url 
+
+`https://en.wikipedia.org/wiki/formula1`
+
+This took an example name such as Michael Schumacher, in the format
+
+`name.replace(" ", "_");`
+
+Which took 'Michael' and 'Schumacher' and included a '_' between the two array's and changed the url of the wikipedia iframe, as thus;
+
+`https://en.wikipedia.org/wiki/Michael_Schumacher`
+
+
 
 ## Built With
 * PyCharm 2016.3.2
