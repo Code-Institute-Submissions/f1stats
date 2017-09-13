@@ -63,12 +63,17 @@ However, the desired result looks something like this, and only achieved once I 
 The dc.selectMenu function on the Circuit page is almost identical to the selection box on the Driver's page, and is also linked to a wikipedia iframe once the user has selected a grand prix from the history located in the data.
 There was a change in how the coding was written, as the original renderlet function wasn't working as intended. Well, the renderlet block of code looks the same, but what we do with the `selectedIndex` once chosen differs.
 
-We had to use `name.split(" ").slice(1).join("_");` to take the user's chosen Grand Prix, for example, the '1995 British Grand Prix', and chop off the 1995 part, ensuring that only 'British Grand Prix' was selected, then each array was seperated now by an underscore, appearing as thus:- `British_Grand_Prix`
-Feed that into the wikipedia iframe target, and the iframe would change to the correct url to display information about the chosen British Grand Prix, like so; `https://en.wikipedia.org/wiki/British_Grand_Prix`
+We had to use 
+`name.split(" ").slice(1).join("_");`
+to take the user's chosen Grand Prix, for example, the '1995 British Grand Prix', and chop off the 1995 part, ensuring that only 'British Grand Prix' was selected, then each array was seperated now by an underscore, appearing as thus:- 
+`British_Grand_Prix`
+
+Feed that into the wikipedia iframe target, and the iframe would change to the correct url to display information about the chosen British Grand Prix, like so; 
+`https://en.wikipedia.org/wiki/British_Grand_Prix`
 
 #### Coding Testing Used
 During my time writing and towards the end of my build, a variety of sites were used to check over my work, look for mistakes with coding and potential missed characters, such as;
-* jshint.com
+* https://jshint.com
 * https://validator.w3.org/
 * https://jigsaw.w3.org/css-validator/
 
